@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Tasks from "./components/Tasks";
+import ControlsPanel from "./components/ControlsPanel";
+import Header from "./components/Header";
+import InformationContextProvider from "./contexts/InformationContext";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InformationContextProvider>
+        <Header />
+        <div className="flex height">
+          <Tasks />
+          <ControlsPanel />
+        </div>
+      </InformationContextProvider>
     </div>
   );
 }

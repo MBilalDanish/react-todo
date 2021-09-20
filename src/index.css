@@ -5,9 +5,131 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #D1D8EC;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App {
+  width: 70vw;
+  height: 90vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+  padding-top: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 0.5rem;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  background: #D1D8EC;
+  -webkit-box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+  box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+}
+
+.tasks-list {
+  overflow-y: auto;
+  height: 95%;
+  width: 50%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.control-panel {
+  height: 95%;
+  width: 50%;
+  overflow-y: auto;
+}
+
+.single-task-category {
+  min-height: 4rem;
+  background-color: white;
+  border-radius: 0.3rem;
+}
+
+.single-task {
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(145deg, #bcc2d4, #e0e7fd);
+  box-shadow: 6px 6px 26px #bec5d7,
+    -6px -6px 26px #e4ebff;
+
+}
+
+.single-task-title {
+  color: #858890;
+  font-weight: 700;
+}
+
+.single-task-desc {}
+
+.control-panel {
+  background: #D1D8EC;
+  -webkit-box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+  box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+form label {
+  color: #858890;
+  font-weight: 700;
+}
+
+
+
+.btn-custom {
+  background: #D1D8EC;
+  -webkit-box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+  box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+}
+
+.completed {
+  border-left: 0.5rem solid #0dbe0d;
+  display: flex;
+}
+
+.flex {
+  display: flex;
+}
+
+.margin-top-zero {
+  margin-top: 0;
+}
+
+.margin-bottom-zero {
+  margin-bottom: 0;
+}
+
+.btn-no-bg {
+  background-color: unset;
+}
+
+.btn-no-border {
+  border: 0;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 2rem;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  background: #D1D8EC;
+  -webkit-box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+  box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+  margin-bottom: 15px;
+}
+
+.height {
+  height: 90%
+}
+
+.full-width {
+  width: 100%;
 }
