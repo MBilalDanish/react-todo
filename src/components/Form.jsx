@@ -4,7 +4,7 @@ import { InformationContext } from "../contexts/InformationContext"
 const Form = () => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [priority, setPriority] = useState('')
+    const [priority, setPriority] = useState(1)
     const [deadline, setDeadline] = useState('')
     const { editData } = useContext(InformationContext)
     const getPriority = (e) => {
@@ -28,30 +28,30 @@ const Form = () => {
             <form className="form" onSubmit={onSubmit}>
                 <div className="form-group">
                     <label htmlFor="title">Title</label>
-                    <input type="text" className="form-control" id="title" onChange={(e) => { setTitle(e.target.value) }} />
+                    <input required type="text" className="form-control" id="title" onChange={(e) => { setTitle(e.target.value) }} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="deadline">Deadline</label>
-                    <input type="text" className="form-control" id="deadline" onChange={(e) => { setDeadline(e.target.value) }} />
+                    <input required type="text" className="form-control" id="deadline" onChange={(e) => { setDeadline(e.target.value) }} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="description">Task Description</label>
-                    <textarea className="form-control" id="description" rows="2" onChange={(e) => { setDescription(e.target.value) }} ></textarea>
+                    <textarea required className="form-control" id="description" rows="2" onChange={(e) => { setDescription(e.target.value) }} ></textarea>
                 </div>
-                <div className="form-group">
-                    <input type="radio" name="priority" id="high" onChange={(e) => getPriority(e.target)} />
+                <div className="form-group d-flex justify-content-around">
+                    <input required type="radio" name="priority" id="high" onChange={(e) => getPriority(e.target)} />
                     <label htmlFor="high">Very High</label>
 
-                    <input type="radio" name="priority" id="significant" onChange={(e) => getPriority(e.target)} />
+                    <input required type="radio" name="priority" id="significant" onChange={(e) => getPriority(e.target)} />
                     <label htmlFor="significant">Significant</label>
 
-                    <input type="radio" name="priority" id="moderate" onChange={(e) => getPriority(e.target)} />
+                    <input required type="radio" name="priority" id="moderate" onChange={(e) => getPriority(e.target)} />
                     <label htmlFor="moderate">Moderate</label>
 
-                    <input type="radio" name="priority" id="minor" onChange={(e) => getPriority(e.target)} />
+                    <input required type="radio" name="priority" id="minor" onChange={(e) => getPriority(e.target)} />
                     <label htmlFor="minor">Minor</label>
 
-                    <input type="radio" name="priority" id="low" onChange={(e) => getPriority(e.target)} />
+                    <input required type="radio" name="priority" id="low" onChange={(e) => getPriority(e.target)} />
                     <label htmlFor="low">Low</label>
                 </div>
                 <input type="submit" className="btn btn-custom full-width" value="Add" />

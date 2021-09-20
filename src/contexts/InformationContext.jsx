@@ -1,81 +1,78 @@
-import React, { createContext, Component } from "react";
+import React, { createContext, useState } from "react";
 export const InformationContext = createContext();
 
-class InformationContextProvider extends Component {
-    state = {
-        tasks_data: [
-            {
-                title: '1 Complete Machine Learning Lectures',
-                id: 1,
-                description: 'Machine Learning Chapter needs to be completed before Saturday, Test is on Monday.',
-                priority: '1',
-                deadline: '',
-                is_completed: false
-            },
-            {
-                title: '2 Complete Machine Learning Lectures',
-                id: 2,
-                description: 'Machine Learning Chapter needs to be completed before Saturday, Test is on Monday.',
-                priority: '2',
-                deadline: '',
-                is_completed: false
-            },
-            {
-                title: '3 Complete Machine Learning Lectures',
-                id: 3,
-                description: 'Machine Learning Chapter needs to be completed before Saturday, Test is on Monday.',
-                priority: '4',
-                deadline: '',
-                is_completed: true
-            },
-            {
-                title: '4 Complete Machine Learning Lectures',
-                id: 4,
-                description: 'Machine Learning Chapter needs to be completed before Saturday, Test is on Monday.',
-                priority: '5',
-                deadline: '',
-                is_completed: false
+const InformationContextProvider = (props) => {
+    const [tasks_data, setTaskData] = useState([
+        {
+            title: 'Complete Machine Learning Lectures',
+            id: 1,
+            description: 'Machine Learning Chapter needs to be completed before Saturday, Test is on Monday.',
+            priority: '1',
+            deadline: '',
+            is_completed: false
+        },
+        {
+            title: 'Attend Conference',
+            id: 2,
+            description: 'Ecommerce Conference will be held in Lahore, Need to attend remotely',
+            priority: '2',
+            deadline: '',
+            is_completed: false
+        },
+        {
+            title: 'Go to Friends House',
+            id: 3,
+            description: 'Need to visit Friends after EID',
+            priority: '4',
+            deadline: '',
+            is_completed: true
+        },
+        {
+            title: 'Wish Birthday to Father',
+            id: 4,
+            description: 'Need to wish Birthday to Father, Also need to Buy Gifts',
+            priority: '1',
+            deadline: '',
+            is_completed: true
 
-            },
-            {
-                title: '5 Complete Machine Learning Lectures',
-                id: 5,
-                description: 'Machine Learning Chapter needs to be completed before Saturday, Test is on Monday.',
-                priority: '1',
-                deadline: '',
-                is_completed: true
-            }
-        ]
-    }
-    editData = (data, method) => {
+        },
+        {
+            title: 'Buy Books',
+            id: 5,
+            description: 'Need to Buy Books related to DATA MINING, MACHINE LEARNING, DATA SCIENCE, MATH',
+            priority: '5',
+            deadline: '',
+            is_completed: false
+        }
+    ]);
+    const editData = (data, method) => {
         if (method === 'remove') {
             let tempArray = [];
-            this.state.tasks_data.forEach((obj) => {
-                if (obj.id !== data) {
-                    tempArray.push(obj)
+            tasks_data.forEach((obj) => {
+                if (data !== obj.id) {
+                    tempArray.push(obj);
                 }
             });
-            this.setState({ tasks_data: tempArray });
-        } else if (method === 'add') {
-            this.state.tasks_data.push(data);
-            this.setState({ tasks_data: this.state.tasks_data });
+            setTaskData(tempArray);
+
+        }else if(method === 'add'){
+            setTaskData([...tasks_data , data]);
         }
         else if (method === 'mark_complete') {
-            this.state.tasks_data.forEach((obj) => {
+            let tempArray = [];
+            tasks_data.forEach((obj, index) => {
                 if (obj.id === data) {
                     obj.is_completed = true;
                 }
+                tempArray.push(obj);
             });
-            this.setState({ tasks_data: this.state.tasks_data });
+            setTaskData(tempArray);
         }
-        // this.setState({tasks_data:this.state.tasks_data.slice(0,this.state.tasks_data.length-1)});
     }
-    render() {
-        return (
-            <InformationContext.Provider value={{ tasks_data: this.state.tasks_data, editData: this.editData }} >
-                {this.props.children}
-            </InformationContext.Provider>
-        )
-    }
+    return (
+        <InformationContext.Provider value={{ tasks_data, editData }} >
+            {props.children}
+        </InformationContext.Provider>
+    )
 }
 export default InformationContextProvider;
