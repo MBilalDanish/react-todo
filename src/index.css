@@ -59,8 +59,6 @@ code {
     font-weight: 700;
 }
 
-.single-task-desc {}
-
 .control-panel {
     background: #D1D8EC;
     -webkit-box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
@@ -109,7 +107,7 @@ form label {
 .header {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     min-height: 2rem;
     -webkit-border-radius: 50px;
     border-radius: 50px;
@@ -148,65 +146,6 @@ form label {
     color: #025483;
 }
 
-.switch-holder {
-    display: flex;
-    padding: 4px;
-    align-items: center;
-}
-
-.switch-label {
-    width: 150px;
-}
-
-.switch-label i {
-    margin-right: 5px;
-}
-
-.switch-toggle {
-    height: 40px;
-}
-
-.switch-toggle input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    z-index: -2;
-}
-
-.switch-toggle input[type="checkbox"]+label {
-    position: relative;
-    display: inline-block;
-    width: 100px;
-    height: 40px;
-    border-radius: 20px;
-    margin: 0;
-    cursor: pointer;
-    box-shadow: inset -8px -8px 15px rgba(255, 255, 255, .6), inset 10px 10px 10px rgba(0, 0, 0, .25);
-}
-
-.switch-toggle input[type="checkbox"]+label::before {
-    position: absolute;
-    content: 'OFF';
-    font-size: 13px;
-    text-align: center;
-    line-height: 25px;
-    top: 8px;
-    left: 8px;
-    width: 45px;
-    height: 25px;
-    border-radius: 20px;
-    background-color: #d1dad3;
-    box-shadow: -3px -3px 5px rgba(255, 255, 255, .5), 3px 3px 5px rgba(0, 0, 0, .25);
-    transition: .3s ease-in-out;
-}
-
-.switch-toggle input[type="checkbox"]:checked+label::before {
-    left: 50%;
-    content: 'ON';
-    color: #fff;
-    background-color: #00b33c;
-    box-shadow: -3px -3px 5px rgba(255, 255, 255, .5), 3px 3px 5px #00b33c;
-}
-
 .text-lg {
     font-size: 2rem;
 }
@@ -217,4 +156,67 @@ form label {
 
 .cursor-pointer {
     cursor: pointer;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-link {
+    font-size: 2rem;
+}
+
+.home {
+    color: forestgreen;
+}
+
+.home:hover {
+    color: rgb(21, 92, 21);
+}
+
+.about {
+    color: midnightblue;
+}
+
+.about:hover {
+    color: rgb(9, 9, 37);
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 20px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 20px;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+*.tasks-list:hover::-webkit-scrollbar {
+    width: 10px;
+}
+
+.posts {
+    height: 80%;
+    overflow-x: auto;
 }

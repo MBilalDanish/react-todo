@@ -6,9 +6,11 @@ const Tasks = () => {
     return (
         <div className="tasks-list">
             {
+                tasks_data.length >0 ?
                 tasks_data.map((task, index) => (
                     <Task task={task}  key={index} />
                 ))
+                : <span>No Task Available</span>
             }
         </div>
     )

@@ -1,16 +1,14 @@
+import { Link } from "react-router-dom"
 const Header = () => {
     return (
         <div className="header">
-            <span className="text-lg">TODO App</span><i className="fas fa-2x fa-list list-icon"></i>
-            {/* <div className="switch-holder">
-                <div className="switch-label">
-                {1===1 ? <i className="fas fa-lightbulb-on"></i>:<i className="fas fa-lightbulb"></i>}<span>Dark Mode</span>
-                </div>
-                <div className="switch-toggle">
-                    <input type="checkbox" id="mode"></input>
-                    <label htmlFor="mode"></label>
-                </div>
-            </div> */}
+            <div className="nav">
+                <Link className="nav-link home" to="/"><i className="fas fa-home"></i></Link>
+                <Link className="nav-link about" to="/posts"><i className="fas fa-th-large"></i></Link>
+                <Link className="nav-link about" to="/postsn"><i className="fab fa-accusoft"></i></Link>
+                <Link className="nav-link about" to="/counter"><i className="fas fa-clock"></i></Link>
+                <Link className="nav-link about" to="/about"><i className="fas fa-info-circle"></i></Link>
+            </div>
         </div>
     )
 }
