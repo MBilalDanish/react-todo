@@ -3,7 +3,7 @@ export const InformationContext = createContext();
 
 const InformationContextProvider = (props) => {
     let tasks = JSON.parse(localStorage.getItem('task_data'));
-    if(tasks.length <1 ) {
+    if (tasks.length < 1) {
         tasks = [
             {
                 title: 'Complete Machine Learning Lectures',
@@ -49,9 +49,12 @@ const InformationContextProvider = (props) => {
         ];
     }
     const [tasks_data, setTaskData] = useState(tasks);
-    useEffect(()=>{
-        localStorage.setItem('task_data',JSON.stringify(tasks_data));
-    },[tasks_data])
+    useEffect(() => {
+        localStorage.setItem('task_data', JSON.stringify(tasks_data));
+    }, [tasks_data]);
+
+
+
     const editData = (data, method) => {
         if (method === 'remove') {
             let tempArray = [];
@@ -62,8 +65,8 @@ const InformationContextProvider = (props) => {
             });
             setTaskData(tempArray);
 
-        }else if(method === 'add'){
-            setTaskData([...tasks_data , data]);
+        } else if (method === 'add') {
+            setTaskData([...tasks_data, data]);
         }
         else if (method === 'mark_complete') {
             let tempArray = [];

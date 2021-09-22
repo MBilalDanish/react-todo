@@ -6,7 +6,6 @@ import Header from "./components/Header";
 import { Provider } from "react-redux";
 import store from "./store";
 import Posts from "./components/Posts";
-import PostsN from './components/PostsN';
 import Counter from "./components/Counter";
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />
             <Route path="/posts" component={Posts} />
-            <Route path="/postsn" component={PostsN} />
             <Route path="/counter" component={Counter} />
           </InformationContextProvider>
         </Router>
