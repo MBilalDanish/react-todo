@@ -3,7 +3,7 @@ export const InformationContext = createContext();
 
 const InformationContextProvider = (props) => {
     let tasks = JSON.parse(localStorage.getItem('task_data'));
-    if (tasks.length < 1) {
+    if (tasks && tasks.length) {
         tasks = [
             {
                 title: 'Complete Machine Learning Lectures',

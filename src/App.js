@@ -7,6 +7,11 @@ import { Provider } from "react-redux";
 import store from "./store";
 import Posts from "./components/Posts";
 import Counter from "./components/Counter";
+import MapBox from "./components/MapBox";
+import MaterialUI from "./components/MaterialUI";
+import HOC from "./components/HOC";
+import Stories from "./components/Stories";
+
 function App() {
   return (
     <div className="App" >
@@ -18,6 +23,10 @@ function App() {
             <Route path="/about" component={About} />
             <Route path="/posts" component={Posts} />
             <Route path="/counter" component={Counter} />
+            <Route path="/map-gl" component={MapBox} />
+            <Route path="/material-ui" component={MaterialUI} />
+            <Route path="/hoc" component={HOC} />
+            <Route path="/stories" component={Stories} />
           </InformationContextProvider>
         </Router>
       </Provider>
