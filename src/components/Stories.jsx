@@ -8,7 +8,7 @@ import { Pagination } from "@material-ui/lab";
 const Stories = (props) => {
     useEffect(() => {
         props.fetchStories();
-        setNoOfPages(50);
+        setNoOfPages(10);
 
     }, []);
     const useStyles = makeStyles(theme => ({
@@ -39,7 +39,7 @@ const Stories = (props) => {
         <div className="stories">
             {props.stories.length ?
                 <div><div className="height-90">{props.stories.slice((page - 1) * itemsPerPage, page * itemsPerPage).map((item, index) => (
-                    <Story item={item} key={index} />
+                    <Story  item={item} key={index} />
                 ))}</div>
                     <div className="height-10">
                         <Pagination

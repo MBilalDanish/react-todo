@@ -2,22 +2,22 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchPosts } from "../actions/postActions";
 
+import Post from "./Post";
+
 const Posts = (props) => {
     useEffect(() => {
         props.fetchPosts();
     })
     return (
+
         <div className="posts">
             {
                 props.posts.map((post) => (
-                    <div key={post.id}>
-                        <h3>{post.title}</h3>
-                        <p>{post.body}</p>
-                    </div>
-
-    ))
+                  <Post post={post}/>
+                ))
             }
         </div>
+
     )
 }
 

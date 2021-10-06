@@ -6,7 +6,7 @@ const Form = () => {
     const [description, setDescription] = useState('')
     const [priority, setPriority] = useState(1)
     const [deadline, setDeadline] = useState('')
-    const {editData } = useContext(InformationContext)
+    const { editData } = useContext(InformationContext)
     const getPriority = (e) => {
         let index = ['high', 'significant', 'moderate', 'minor', 'low'].indexOf(e.id);
         setPriority(index + 1);
@@ -27,13 +27,13 @@ const Form = () => {
         setDeadline('');
         Swal.fire(
             'Task Saved!',
-             title,
+            title,
             'success'
-          )
+        )
     }
     return (
         <div>
-            <form className="form" onSubmit={onSubmit}>
+            <form className="form animate__animated animate__zoomIn" onSubmit={onSubmit}>
                 <div className="form-group">
                     <label htmlFor="title">Title</label>
                     <input required value={title} type="text" className="form-control" id="title" onChange={(e) => { setTitle(e.target.value) }} />
