@@ -13,8 +13,7 @@ const Header = () => {
                 <Link className="animate__animated animate__rotateIn nav-link hoc text-info" to="/hoc"><i className=" fas fa-sitemap"></i></Link>
                 <Link className="animate__animated animate__rotateIn nav-link hoc text-info" to="/stories"><i className="fas fa-newspaper"></i></Link>
                 <Link className="animate__animated animate__rotateIn nav-link hoc text-danger" to="/styled"><i className="fas fa-paint-brush"></i></Link>
-
-
+                {/* <Link></Link> */}
             </div>
         </div>
     )
